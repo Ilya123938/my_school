@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m1jz$*texrn*31j7w)8)&m1h(7g6qx!mn3j(mlfwm0=$n2)9ro
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://schooldjango-production.up.railway.app/']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'crispy_forms',
     'crispy_bootstrap5'
-    
+
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
