@@ -27,6 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['schooldjango-production.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = ['https://schooldjango-production.up.railway.app']
 
 # Application definition
 
