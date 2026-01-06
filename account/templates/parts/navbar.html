@@ -1,0 +1,57 @@
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% bootstrap_css %}
+</head>
+<body>
+  <nav class="navbar navbar-expand-md bg-warning">
+    <a href="#" class="navbar-brand">school</a>
+    <button type="button" class="navbar-toggler" data-bs-target="#colla" data-bs-toggle="collapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+              {% if user.is_authenticated %}
+   
+    <li class="nav-item">
+        <a href="{% url 'accounts:logout' %}" class="nav-link">الخروج</a>
+    </li>
+    {% if user.role == 'TR'%}
+     <li class="nav-item">
+        <a href="{% url 'accounts:create_student' %}" class="nav-link">تسجيل الطلاب</a>
+
+
+    </li>
+       <li class="nav-item">
+        <a href="{% url 'accounts:create_records' %}" class="nav-link">تسجيل نتائج الطلاب</a>
+        
+
+    </li>
+
+
+
+    <li>        <a href="{% url 'accounts:teacher_dashboard' %}" class="nav-link">الرئيسية</a>
+</li>
+{% else %}
+     <li>        <a href="{% url 'accounts:students_dashboard' %}" class="nav-link">الرئيسية</a>
+</li>
+    {% endif%}
+{% else %}
+    <li class="nav-item">
+        <a href="{% url 'accounts:register' %}" class="nav-link">التسجيل</a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'accounts:login' %}" class="nav-link">الدخول</a>
+    </li>
+{% endif %}
+        </ul>
+    </div>
+  </nav>
+
+</body>
+{% bootstrap_javascript%}
+</html>
