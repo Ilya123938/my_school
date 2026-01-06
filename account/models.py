@@ -101,6 +101,7 @@ class Teacher(models.Model):
 
     
 
+from cloudinary.models import CloudinaryField
 
 
 class Student(models.Model):
@@ -109,7 +110,7 @@ class Student(models.Model):
         on_delete=models.CASCADE,
         related_name='student_profile'
     )
-    photo = models.ImageField('image', blank=True, null=True)
+    photo = CloudinaryField('image', blank=True, null=True)
     teacher = models.ForeignKey(
         Teacher,
         on_delete=models.SET_NULL,
