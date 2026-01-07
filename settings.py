@@ -58,6 +58,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ⬅️ مهم جداً لتقديم static files
+
     'django.contrib.sessions.middleware.SessionMiddleware',
   
     'django.middleware.common.CommonMiddleware',
@@ -67,6 +69,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 ROOT_URLCONF = 'config.urls'
 
@@ -142,6 +146,9 @@ MEDIA_URL ='/media/'
 
 
 
+# السماح برفع ملفات أكبر
+DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50MB
 
 
 AUTH_USER_MODEL = 'account.Account'
