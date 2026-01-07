@@ -1,0 +1,17 @@
+{% extends "account/base.html" %}
+{% block content %}
+<h2>تأكيد الحذف</h2>
+
+<p>
+هل أنت متأكد من حذف نتيجة:
+<strong>{{ grade.student.user.first_name }}</strong>
+في مادة <strong>{{ grade.subject.name }}</strong>؟
+</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">نعم، احذف</button>
+  <a href="{% url 'accounts:teacher_dashboard' %}" class="btn btn-warning">إلغاء</a>
+</form>
+
+{% endblock content %}
