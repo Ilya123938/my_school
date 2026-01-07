@@ -28,6 +28,15 @@ DEBUG = False
 ALLOWED_HOSTS = ['schooldjango-production.up.railway.app']
 
 CSRF_TRUSTED_ORIGINS = ['https://schooldjango-production.up.railway.app']
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+
+SECURE_HSTS_SECONDS = 3600  # أو أكثر
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+
 
 # Application definition
 
@@ -144,6 +153,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_URL ='/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'account/static')]
 
 
 
