@@ -5,6 +5,9 @@ from .forms import RegisterForm,CreateStudentForm,CreateRecordForm
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+def home(request):
+    return render(request,'account/home.html')
+
 @login_required(login_url='accounts:login')
 def redirect_user(request):
     if request.user.role == 'TR':
