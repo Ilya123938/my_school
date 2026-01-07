@@ -19,7 +19,11 @@ def teacher_dashboard(request):
     if request.user.role != 'TR':
         return redirect('accounts:login')
 
-    teacher =request.user.teacher_profile
+    try:
+        teacher = request.user.teacher_profile
+    except Teacher.DoesNotExist:
+        return redirect('accounts:login')  # أو صفحة خطأ مخصصة
+
     students = teacher.students.all().prefetch_related('grades')
 
     context = {
@@ -28,6 +32,7 @@ def teacher_dashboard(request):
         'students_count': students.count(),
     }
     return render(request,'account/teacher_dashboard.html',context)
+
 
 
 @login_required(login_url='accounts:login') 
