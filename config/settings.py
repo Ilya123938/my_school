@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-m1jz$*texrn*31j7w)8)&m1h(7g6qx!mn3j(mlfwm0=$n2)9ro
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['schooldjango-production.up.railway.app']
+ALLOWED_HOSTS = ['myschool-production-0069.up.railway.app']
 
-CSRF_TRUSTED_ORIGINS = ['https://schooldjango-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://myschool-production-0069.up.railway.app/']
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
