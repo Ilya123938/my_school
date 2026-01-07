@@ -58,6 +58,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ⬅️ هنا بالضبط
+
     'django.contrib.sessions.middleware.SessionMiddleware',
   
     'django.middleware.common.CommonMiddleware',
